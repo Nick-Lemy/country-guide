@@ -44,7 +44,7 @@ app.post('/api/describe', async (req, res) => {
         const response = await model.generateContent(text);
         res.send(response.response);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to generate description' + error });
+        res.status(500).json({ error: 'Failed to generate description ' + error });
     }
 });
 
