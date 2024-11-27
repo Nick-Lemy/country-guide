@@ -1,72 +1,92 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #eaf2f8;
+    color: #2c3e50;
+    line-height: 1.6;
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    background-color: #4CAF50;
+    padding: 30px;
+    background: linear-gradient(135deg, #6c5ce7, #0984e3);
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: bold;
 }
 
 header p {
     margin-top: 10px;
     font-size: 1.2em;
+    color: #dfe6e9;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 30px 0;
+    gap: 10px;
 }
 
 #countrySearch {
-    width: 300px;
-    padding: 10px;
+    width: 320px;
+    padding: 12px 15px;
     font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #dcdde1;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-inline: 5px;
+}
+
+#countrySearch:focus {
+    border-color: #6c5ce7;
 }
 
 #searchButton {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1em;
-    margin-left: 10px;
-    background-color: #4CAF50;
+    background: #6c5ce7;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-inline: 5px;
 }
 
 #searchButton:hover {
-    background-color: #45a049;
+    background: #5a4dbf;
 }
 
 .country-details {
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .flag-placeholder {
     width: 100%;
     height: 200px;
-    background-color: #e0e0e0;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -78,25 +98,76 @@ header p {
 }
 
 .info p {
-    font-size: 1.1em;
-    margin: 10px 0;
+    font-size: 1.2em;
+    margin: 15px 0;
 }
 
 strong {
-    color: #4CAF50;
+    color: #6c5ce7;
 }
+
 .generated-info {
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1.1em;
+    max-width: 700px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
     color: #555;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.generated-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .generated-info h2 {
-    color: #4CAF50;
+    color: #6c5ce7;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #countrySearch {
+        width: 90%;
+    }
+
+    #searchButton {
+        text-align: center;
+    }
+
+    .country-details, .generated-info {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .country-details, .generated-info {
+        padding: 15px;
+    }
+
+    #searchButton {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
 }
