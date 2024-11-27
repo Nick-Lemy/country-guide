@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Country Guide</h1>
+        <p>Discover details about any country in the world. Search for a country to see its flag, capital, population,
+            and more.</p>
+    </header>
+
+    <main>
+        <section class="search-container">
+            <input type="text" id="countrySearch" placeholder="Enter country name..." />
+            <button id="searchButton">Search</button>
+        </section>
+
+        <section class="country-details">
+            <div id="flag" class="flag-placeholder">Flag will appear here</div>
+            <div class="info">
+                <p><strong>Capital:</strong> <span id="capital">N/A</span></p>
+                <p><strong>Population:</strong> <span id="population">N/A</span></p>
+                <p><strong>Currency:</strong> <span id="currency">N/A</span></p>
+                <p><strong>Languages:</strong> <span id="languages">N/A</span></p>
+                <p><strong>Region:</strong> <span id="region">N/A</span></p>
+            </div>
+        </section>
+        <section class="generated-info">
+            <h2>Description</h2>
+            <p id="countryDescription">The description of the country will appear here.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
