@@ -1,5 +1,5 @@
 {
-  "name": "english-lingala_api",
+  "name": "country-guide",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nick-Lemy/english-lingala_api.git"
+    "url": "git+https://github.com/Nick-Lemy/country-guide.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nick-Lemy/english-lingala_api/issues"
+    "url": "https://github.com/Nick-Lemy/country-guide/issues"
   },
-  "homepage": "https://github.com/Nick-Lemy/english-lingala_api#readme",
+  "homepage": "https://github.com/Nick-Lemy/country-guide#readme",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "axios": "^1.7.8",
