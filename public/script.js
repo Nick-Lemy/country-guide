@@ -8,6 +8,7 @@ const currency = document.getElementById('currency');
 const language = document.getElementById('languages');
 const region = document.getElementById('region');
 
+// add event listener to the  Search button
 btn.addEventListener('click', () => {
     const countryName = country.value;
 
@@ -29,7 +30,7 @@ btn.addEventListener('click', () => {
             const reg = data.region;
             const languages = Object.values(data.languages).join(", ");
 
-            // Update DOM elements
+            // Update my DOM
             capital.innerHTML = cap;
             population.innerHTML = pop + " people";
             currency.innerHTML = currencies;
