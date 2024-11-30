@@ -1,6 +1,7 @@
 # Country Guide
 
 The Country Guide application provides detailed information about countries.
+loom video of the presentation: https://www.loom.com/share/e18b7ac113c440f4a0a0c0833f27b50e
 
 ## Setup
 This README will show you the steps to use this app and the challenges faced. It also includes the credentials of the APIs used.
