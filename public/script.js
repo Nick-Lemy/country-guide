@@ -20,8 +20,6 @@ btn.addEventListener('click', () => {
             return response.json();
         })
         .then(data => {
-            console.log(data);
-
             const cap = data.capital[0];
             const pop = data.population.toLocaleString();
             const currencies = Object.values(data.currencies)
