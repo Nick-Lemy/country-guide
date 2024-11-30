@@ -7,7 +7,7 @@ This README will show you 2 step of using this app
 1. [Run it locally](#a-run-it-localy) 
 2. [Deployment process on two servers and a load balancer](#b-servers-deployment-process)
 
-# A. Run it Localy
+## A. Run it Localy
 ### 1. Cloning
 Clone the repository using the following command
 
@@ -37,5 +37,8 @@ node server.js
 And That's all
 
 ## B. Servers Deployment Process
+For this part, I have created two bash scripts that automate this work, one of the servers that are handling the requests (web-01 and web-02 in our case). Plus every steps are very well explained. last but not least, I will explain in this README file how I deployed (The entire process).
 
- 
+Note: The files names are: s`setup_web-01_web-02`, and `setup_lb-01`
+### 1. Web 01 and Web 02
+

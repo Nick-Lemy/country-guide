@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+cd ~
+sudo apt update && sudo apt ugrade
+curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt-get install nodejs
+sudo apt-get install build-essential
+
+sudo git clone https://www.github.com/Nick-Lemy/country-guide
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+source ~/.bashrc
+sudo nvm install 18
+sudo nvm use 18
+cd country-guide
+echo 'GEMINI=my_api_key' > .env
+sudo npm install -g pm2
+sudo npm install axios
+pm2 start server.js --interpreter $(which node)
+pm2 startup systemd
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u sammy --hp /home/ubuntu
+systemctl status pm2-ubuntu
+
+sudo apt install nginx
+
+new_config=\
+"server {
+		listen 80 default_server;
+		listen [::]:80 default_server;
+		root /var/www/html;
+		index index.html index.htm index.nginx-debian.html
+		server_name_;
+		add_header X-Served-By \$hostname;
+		location / {
+			proxy_pass http://localhost:3000;
+			proxy_http_version 1.1;
+			proxy_set_header Upgrade \$http_upgrade;
+			proxy_set_header Connection 'upgrade';
+			proxy_set_header Host \$host;
+			proxy_cache_bypass \$http_upgrade;
+		}
+		if (\$request_filename ~ redirect_me){
+			rewrite ^ https://th3-gr00t.tk/ permanent;
+		}
+		error_page 404 /error_404.html;
+		location = /error_404.html {
+			internal;
+		}
+}
+"
+sudo chown -R ubuntu:ubuntu /etc/nginx/sites-available/default
+echo "$new_config" > /etc/nginx/sites-available/default
+sudo service nginx restart
