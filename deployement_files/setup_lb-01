@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+# install haproxy
+sudo apt install haproxy
+# create a new config file for haproxy
+new_config=\
+"
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend clickviral-tech-frontend
+    bind *:80
+    default_backend clickviral-tech-backend
+
+backend clickviral-tech-backend
+    balance roundrobin
+    server 6329-web-01 54.167.52.204:80 check
+    server 6329-web-02 34.228.244.169:80 check
+"
+# replace the default haproxy config file with the new one by first changing the permissions
+sudo chown -R ubuntu:ubuntu /etc/haproxy/haproxy.cfg
+echo "$new_config" > /etc/haproxy/haproxy.cfg
+
+# restart haproxy
+sudo service haproxy restart
