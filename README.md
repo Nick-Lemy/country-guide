@@ -1,6 +1,6 @@
-# Country Guide Node.js Application
+# Country Guide
 
-The Country Guide application provides detailed information about countries, including data on various cities.
+The Country Guide application provides detailed information about countries.
 
 ## Setup
 This README will show you the steps to use this app and the challenges faced. It also includes the credentials of the APIs used.
