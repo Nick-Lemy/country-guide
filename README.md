@@ -23,7 +23,7 @@ cd country-guide/
 ```
 
 ### 3. Add the API KEY of Gemini API
-Go to https://www.gemini.com/ and follow the steps to get an API key. Then run the following command to add it to the .env file in the project:
+Go to https://ai.google.dev/api?lang=node and follow the steps to get an API key. Then run the following command to add it to the .env file in the project:
 
 ```
 echo 'GEMINI_APIKEY=your_api_key' > .env
