@@ -8,17 +8,14 @@ dotenv.config();
 
 const app = express();
 const PORT = 3000;
-
-const AI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
 const COUNTRY_API_BASE_URL = 'https://countryinfoapi.com/api/countries/name/';
-
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_APIKEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public')); // Serve static files from the "public" folder
+app.use(express.static('public'));
 
 // Fetch country data
 app.get('/api/country/:name', async (req, res) => {
