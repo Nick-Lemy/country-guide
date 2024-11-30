@@ -6,7 +6,7 @@ The Country Guide application provides detailed information about countries, inc
 ## Setups
 This README will show you 2 step of using this app
 1. Run it locally 
-2. Deployement process on two servers and a load balancer server
+2. Deployement process on two servers and a load balancer
 
 # Run it Localy
 ### 1. Cloning
