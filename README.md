@@ -4,6 +4,8 @@ The Country Guide application provides detailed information about countries.
 
 loom video of the presentation(DO NOT FORGET TO PUT THE SPEED AT 1x For a better watching experience): https://www.loom.com/share/e18b7ac113c440f4a0a0c0833f27b50e
 
+website's link: https://www.nick-lemy.tech/
+
 ## Setup
 This README will show you the steps to use this app and the challenges faced. It also includes the credentials of the APIs used.
 1. [Run it locally](#a-run-it-locally)
